@@ -9,7 +9,7 @@ services:
     name: recruitment-demo-portal
     runtime: python
     plan: free
-    buildCommand: "./build.sh"
+    buildCommand: "bash build.sh"
     startCommand: "gunicorn config.wsgi:application --workers 2 --threads 2 --timeout 120"
     healthCheckPath: "/health/"
     envVars:
