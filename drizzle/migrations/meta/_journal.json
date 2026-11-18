@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794926992993,
+      "tag": "0000_create_recruitment_portal",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794929587138,
+      "tag": "0001_allow_fictional_demo_submissions",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794929861722,
+      "tag": "0002_keep_demo_submissions_server_only",
+      "breakpoints": true
+    }
+  ]
+}
