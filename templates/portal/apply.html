@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Application form · Bharat Janseva Demo Bank{% endblock %}
+{% block content %}
+<div class="form-page">
+  <a class="back-link" href="{% url 'home' %}">← Back to home</a>
+  <div class="form-heading"><div class="eyebrow">DEMO CAREER APPLICATION</div><h1>Application form</h1><p>Customer Service Associate <span class="tag">DEMO POSITION</span></p></div>
+  <div class="form-notice"><strong>Demo only:</strong> Use invented details. This website is not operated by a real bank and does not accept official job applications.</div>
+  <form method="post" class="application-form" novalidate>
+    {% csrf_token %}
+    <input type="hidden" name="submission_key" value="{{ submission_key }}">
+    <div class="honeypot">{{ form.website.label_tag }}{{ form.website }}</div>
+    {% if form.non_field_errors %}<div class="error-summary">{{ form.non_field_errors }}</div>{% endif %}
+    <div class="form-section-title"><span>01</span><div><h2>Personal details</h2><p>Basic contact information for this demo record.</p></div></div>
+    <div class="field-grid">
+      <div class="field full"><label for="{{ form.full_name.id_for_label }}">Full name <b>*</b></label>{{ form.full_name }}{{ form.full_name.errors }}</div>
+      <div class="field"><label for="{{ form.email.id_for_label }}">Email address <b>*</b></label>{{ form.email }}{{ form.email.errors }}</div>
+      <div class="field"><label for="{{ form.phone.id_for_label }}">Phone number (test) <b>*</b></label>{{ form.phone }}{{ form.phone.errors }}<small>Use a fictional 10-digit number, not your personal number.</small></div>
+      <div class="field"><label for="{{ form.city.id_for_label }}">City <b>*</b></label>{{ form.city }}{{ form.city.errors }}</div>
+      <div class="field"><label for="{{ form.state.id_for_label }}">State <b>*</b></label>{{ form.state }}{{ form.state.errors }}</div>
+    </div>
+    <div class="form-divider"></div>
+    <div class="form-section-title"><span>02</span><div><h2>Education details</h2><p>Select your sample qualification.</p></div></div>
+    <div class="field-grid">
+      <div class="field"><label for="{{ form.qualification.id_for_label }}">Highest qualification <b>*</b></label>{{ form.qualification }}{{ form.qualification.errors }}</div>
+      <div class="field"><label for="{{ form.passing_year.id_for_label }}">Passing year <b>*</b></label>{{ form.passing_year }}{{ form.passing_year.errors }}</div>
+    </div>
+    <div class="form-divider"></div>
+    <div class="ack-box"><div class="ack-check">{{ form.demo_acknowledged }}</div><div><label for="{{ form.demo_acknowledged.id_for_label }}">{{ form.demo_acknowledged.label }}</label><p>By checking this, you confirm that you understand this is only a test submission and not an official recruitment application.</p>{{ form.demo_acknowledged.errors }}</div></div>
+    <button class="btn btn-primary submit-btn" type="submit">Submit demo application <span>→</span></button>
+    <p class="form-footnote">No application fee. No payment. No real recruitment or selection.</p>
+  </form>
+</div>
+{% endblock %}

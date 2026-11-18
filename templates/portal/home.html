@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Careers · Bharat Janseva Demo Bank{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span></span> CAREERS · DEMO OPPORTUNITY</div>
+    <h1>Build a future<br>of <em>possibilities.</em></h1>
+    <p class="hero-lede">Explore a simple, easy-to-use recruitment application experience inspired by Indian banking careers.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="{% url 'apply' %}">Start application <span>→</span></a><span class="time-note">Simple form · Instant demo receipt</span></div>
+    <div class="hero-points"><span>✓ Easy application</span><span>✓ Mobile friendly</span><span>✓ PDF receipt</span></div>
+  </div>
+  <div class="hero-art">
+    <div class="art-top"><span>CAREER OPPORTUNITY</span><span class="art-pill">DEMO</span></div>
+    <div class="bank-building"><div class="bank-roof"></div><div class="bank-columns"><i></i><i></i><i></i><i></i></div><div class="bank-base"></div></div>
+    <div class="art-caption"><span class="caption-icon">₹</span><div><small>DEMO POSITION</small><strong>Customer Service Associate</strong><small>Sample opening · Fictional institution</small></div></div>
+    <div class="art-seal">BHARAT<br>JANSEVA<br><b>DEMO</b></div>
+  </div>
+</section>
+<section class="notice-wrap"><div class="notice-icon">i</div><div><strong>Please read before applying</strong><p>This is not a real bank recruitment process. Do not enter Aadhaar, PAN, bank account, card, password, OTP or any real sensitive information. Use fictional test details only.</p></div></section>
+<section class="process">
+  <div class="section-head"><div><div class="eyebrow">HOW IT WORKS</div><h2>Three simple steps.</h2></div><p>No complicated process. Fill in the basic details and download your demo receipt.</p></div>
+  <div class="steps">
+    <article><span class="step-no">01</span><div class="step-icon">✎</div><h3>Fill the form</h3><p>Enter a few basic details using invented test information.</p></article>
+    <article><span class="step-no">02</span><div class="step-icon">✓</div><h3>Submit once</h3><p>Your demo submission is saved in the website backend.</p></article>
+    <article><span class="step-no">03</span><div class="step-icon">↓</div><h3>Get your receipt</h3><p>See your reference number and download a PDF receipt.</p></article>
+  </div>
+</section>
+<section class="cta"><div><div class="eyebrow light">READY TO TRY THE DEMO?</div><h2>Your application journey<br>starts here.</h2></div><a class="btn btn-light" href="{% url 'apply' %}">Apply now <span>→</span></a></section>
+{% endblock %}
