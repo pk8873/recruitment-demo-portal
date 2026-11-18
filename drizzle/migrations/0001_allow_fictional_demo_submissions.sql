@@ -1,2 +1,0 @@
-GRANT INSERT ON public.applications TO anon;
-CREATE POLICY "Visitors can submit acknowledged demo applications" ON public.applications FOR INSERT TO anon WITH CHECK (demo_acknowledged = TRUE AND EXISTS (SELECT 1 FROM public.vacancies v JOIN public.bank_profiles b ON b.id = v.bank_id WHERE v.id = vacancy_id AND v.active = TRUE AND v.closing_date >= CURRENT_DATE AND b.active = TRUE));

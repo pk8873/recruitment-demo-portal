@@ -1,0 +1,23 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b5d">
+  <meta name="description" content="A fictional Indian bank recruitment portal demonstration.">
+  <title>{% block title %}Bharat Janseva Demo Bank · Recruitment{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'portal/site.css' %}">
+</head>
+<body>
+  <div class="demo-strip"><span>DEMO WEBSITE</span> Independent software demonstration · Not an official bank website</div>
+  <header class="site-header">
+    <a class="brand" href="{% url 'home' %}">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M5 18 24 7l19 11H5Zm4 4h30v3H9zm2 5h5v11h-5zm11 0h5v11h-5zm11 0h5v11h-5zM7 41h34v3H7z"/></svg></span>
+      <span><strong>Bharat Janseva</strong><small>DEMO BANK · CAREERS PORTAL</small></span>
+    </a>
+    <nav><a href="{% url 'home' %}">Home</a><a href="{% url 'apply' %}" class="nav-apply">Apply now <span>→</span></a></nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="footer"><div><strong>Bharat Janseva Demo Bank</strong><p>Fictional name used only to demonstrate a simple online application flow.</p></div><div class="footer-notice">No real bank, government department or recruitment authority is associated with this website. Use invented test details only.</div><small>© {% now "Y" %} · Demo project</small></footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Submission confirmation · Demo Bank{% endblock %}
+{% block content %}
+<section class="receipt-page">
+  <div class="success-icon">✓</div><div class="eyebrow">SUBMISSION CONFIRMATION</div>
+  <h1>Your demo form has<br><em>been submitted.</em></h1>
+  <p class="receipt-lede">Your information has been saved in this website's demo database. You can download the confirmation receipt below.</p>
+  <div class="receipt-card">
+    <div class="receipt-card-head"><div><small>BHARAT JANSEVA DEMO BANK</small><strong>Application receipt</strong></div><span class="tag">DEMO</span></div>
+    <div class="receipt-status"><span>✓</span><div><strong>Demo submission recorded</strong><small>This is not an official bank acknowledgement.</small></div></div>
+    <div class="receipt-data">
+      <div><small>REFERENCE NUMBER</small><strong class="reference">{{ application.reference }}</strong></div>
+      <div><small>APPLICANT NAME</small><strong>{{ application.full_name }}</strong></div>
+      <div><small>DEMO POSITION</small><strong>{{ application.position }}</strong></div>
+      <div><small>SUBMITTED ON</small><strong>{{ application.submitted_at|date:"d M Y, h:i A" }} IST</strong></div>
+    </div>
+    <a class="btn btn-primary download-btn" href="{% url 'receipt_pdf' application.reference %}">↓ Download PDF receipt</a>
+  </div>
+  <p class="receipt-warning">Keep the receipt as proof of a test submission only. It does not mean you have applied to, been shortlisted by, or been selected by any real bank.</p>
+  <a class="back-link" href="{% url 'home' %}">← Return to home</a>
+</section>
+{% endblock %}
